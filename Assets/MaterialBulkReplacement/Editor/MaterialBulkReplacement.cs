@@ -32,7 +32,6 @@ namespace MaterialBulkReplacement {
 
         private void materialBulkReplace()
         {
-            // foreach(var selectedGameObject in Selection.gameObjects)
             Selection.gameObjects.ForEach(selectedGameObject => 
             {
                 var meshRenderer = selectedGameObject.GetComponent<MeshRenderer>();
