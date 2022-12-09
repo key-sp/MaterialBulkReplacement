@@ -13,3 +13,5 @@ And it officially supports multiple selection of game objects as follows.
 Game objects without a meshrenderer component attached are ignored.
 
 ![MaterialBulkReplacement2](https://user-images.githubusercontent.com/33142993/206658614-11968e06-c68d-4369-a574-253c4c8fe3ed.gif)
+
+Please note that the game object shown in the gif image is not included in the repository.
