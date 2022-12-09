@@ -25,9 +25,7 @@ namespace MaterialBulkReplacement {
             this.replaceMaterial = (Material)EditorGUILayout.ObjectField("Replace Material", this.replaceMaterial, typeof(Material), false);
 
             if (GUILayout.Button("Replace"))
-            {
                 this.materialBulkReplace();
-            }
         }
 
         private void materialBulkReplace()
@@ -35,14 +33,15 @@ namespace MaterialBulkReplacement {
             Selection.gameObjects.ForEach(selectedGameObject => 
             {
                 var meshRenderer = selectedGameObject.GetComponent<MeshRenderer>();
+                if (!meshRenderer)
+                    return;
                 
                 var originalMeshRendererMaterials = meshRenderer.sharedMaterials;
                 var replacedMeshRendererMaterials = meshRenderer.sharedMaterials.Select(meshRendererMaterial =>
                 {
                     if (meshRendererMaterial == this.targetMaterial)
-                    {
                         meshRendererMaterial = this.replaceMaterial;
-                    }
+                        
                     return meshRendererMaterial;
                 }).ToArray();
 
